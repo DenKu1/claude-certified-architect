@@ -1943,7 +1943,7 @@ When Edit fails due to a non-unique text match:
 
 **Which change is most effective?**
 
-- A) Add a programmatic precondition that blocks `lookup_order` and `process_refund` until an ID is obtained from `get_customer` ****
+- A) Add a programmatic precondition that blocks `lookup_order` and `process_refund` until an ID is obtained from `get_customer` **[CORRECT]**
 - B) Improve the system prompt
 - C) Add few-shot examples
 - D) Implement a routing classifier
@@ -1959,7 +1959,7 @@ When Edit fails due to a non-unique text match:
 **What is the first step?**
 
 - A) Few-shot examples
-- B) Expand each tool’s description with input formats, examples, and boundaries ****
+- B) Expand each tool’s description with input formats, examples, and boundaries **[CORRECT]**
 - C) Add a routing layer
 - D) Merge the tools
 
@@ -1973,7 +1973,7 @@ When Edit fails due to a non-unique text match:
 
 **How do you improve calibration?**
 
-- A) Add explicit escalation criteria with few-shot examples ****
+- A) Add explicit escalation criteria with few-shot examples **[CORRECT]**
 - B) Self-rated confidence (1–10) with automatic escalation
 - C) A separate classifier trained on historical data
 - D) Sentiment analysis
@@ -1988,7 +1988,7 @@ When Edit fails due to a non-unique text match:
 
 **Where should you create the command file?**
 
-- A) `.claude/commands/` in the project repository ****
+- A) `.claude/commands/` in the project repository **[CORRECT]**
 - B) `~/.claude/commands/`
 - C) Root `CLAUDE.md`
 - D) `.claude/config.json`
@@ -2003,7 +2003,7 @@ When Edit fails due to a non-unique text match:
 
 **What approach should you use?**
 
-- A) Planning mode: explore the codebase, understand dependencies, design an approach ****
+- A) Planning mode: explore the codebase, understand dependencies, design an approach **[CORRECT]**
 - B) Direct execution incrementally
 - C) Direct execution with detailed up-front instructions
 - D) Direct execution and switch to planning when it gets hard
@@ -2018,7 +2018,7 @@ When Edit fails due to a non-unique text match:
 
 **What approach should you use?**
 
-- A) `.claude/rules/` files with YAML frontmatter and glob patterns ****
+- A) `.claude/rules/` files with YAML frontmatter and glob patterns **[CORRECT]**
 - B) Put everything in the root CLAUDE.md
 - C) Skills in `.claude/skills/`
 - D) CLAUDE.md in every directory
@@ -2034,7 +2034,7 @@ When Edit fails due to a non-unique text match:
 **What’s the cause?**
 
 - A) The synthesis agent does not detect gaps
-- B) The coordinator decomposed the task too narrowly ****
+- B) The coordinator decomposed the task too narrowly **[CORRECT]**
 - C) The web search agent does not search thoroughly enough
 - D) The document analysis agent filters out non-visual sources
 
@@ -2048,7 +2048,7 @@ When Edit fails due to a non-unique text match:
 
 **Which error propagation approach best enables intelligent recovery?**
 
-- A) Return structured error context to the coordinator: failure type, query, partial results, and alternatives ****
+- A) Return structured error context to the coordinator: failure type, query, partial results, and alternatives **[CORRECT]**
 - B) Implement automatic retries with exponential backoff inside the subagent, then return a generic “search unavailable” status
 - C) Catch the timeout inside the subagent and return an empty result set marked as success
 - D) Propagate the timeout exception to a top-level handler that terminates the whole workflow
@@ -2063,7 +2063,7 @@ When Edit fails due to a non-unique text match:
 
 **How do you reduce overhead while maintaining reliability?**
 
-- A) Give the synthesis agent a limited `verify_fact` tool for simple checks, and continue routing complex verification through the coordinator ****
+- A) Give the synthesis agent a limited `verify_fact` tool for simple checks, and continue routing complex verification through the coordinator **[CORRECT]**
 - B) Accumulate all verification needs into a batch and return them to the coordinator at the end
 - C) Give the synthesis agent full access to all web-search tools
 - D) Proactively cache additional context around each source
@@ -2078,7 +2078,7 @@ When Edit fails due to a non-unique text match:
 
 **What is the correct approach?**
 
-- A) Use the `-p` flag: `claude -p "Analyze this pull request for security issues"` ****
+- A) Use the `-p` flag: `claude -p "Analyze this pull request for security issues"` **[CORRECT]**
 - B) Set `CLAUDE_HEADLESS=true`
 - C) Redirect stdin from `/dev/null`
 - D) Use `--batch`
@@ -2093,7 +2093,7 @@ When Edit fails due to a non-unique text match:
 
 **How should you evaluate this proposal?**
 
-- A) Use batch processing only for tech-debt reports; keep real-time calls for pre-merge checks ****
+- A) Use batch processing only for tech-debt reports; keep real-time calls for pre-merge checks **[CORRECT]**
 - B) Move both workflows to batch processing and poll for completion
 - C) Keep real-time calls for both to avoid ordering issues in batch results
 - D) Move both to batch processing with a fallback to real time if a batch takes too long
@@ -2108,7 +2108,7 @@ When Edit fails due to a non-unique text match:
 
 **How should you restructure the review?**
 
-- A) Split into focused passes: analyze each file individually for local issues, then run a separate integration pass for cross-file data flows ****
+- A) Split into focused passes: analyze each file individually for local issues, then run a separate integration pass for cross-file data flows **[CORRECT]**
 - B) Require developers to split large PRs into submissions of 3–4 files
 - C) Switch to a higher-tier model with a larger context window to review all 14 files in one pass
 - D) Run three independent full-PR review passes and report only issues found in at least two runs
@@ -2136,7 +2136,7 @@ When Edit fails due to a non-unique text match:
 - A) Apply credibility heuristics to pick the most likely correct number, finish analysis with that value, and add a footnote mentioning the discrepancy.
 - B) Include both numbers in the analysis output without marking them as conflicting, letting the synthesis agent decide which to use based on broader context.
 - C) Stop analysis and immediately escalate to the coordinator, asking it to decide which source is more authoritative before continuing.
-- D) Complete analysis with both numbers, explicitly annotate the conflict with source attribution, and let the coordinator decide how to reconcile the data before passing to synthesis. ****
+- D) Complete analysis with both numbers, explicitly annotate the conflict with source attribution, and let the coordinator decide how to reconcile the data before passing to synthesis. **[CORRECT]**
 
 **Why D:** This approach preserves separation of responsibilities: the analysis agent completes its core work without blocking, preserves both conflicting values with clear attribution, and correctly passes reconciliation to the coordinator, which has broader context.
 
@@ -2150,7 +2150,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Each agent sends its results directly to the report-writing agent, bypassing the coordinator.
 - B) The document analysis agent requests web-search results and merges them internally.
-- C) The coordinator passes both sets of results to the synthesis agent for a unified integration. ****
+- C) The coordinator passes both sets of results to the synthesis agent for a unified integration. **[CORRECT]**
 - D) The coordinator concatenates the raw outputs from both agents and returns them as the final result.
 
 **Why C:** In a coordinator–subagent architecture, the coordinator forwards both result sets to the synthesis agent for centralized integration, preserving control and ensuring high-quality merging.
@@ -2166,7 +2166,7 @@ When Edit fails due to a non-unique text match:
 - A) Create a dedicated error-handling agent that monitors all failures via a shared queue and decides recovery actions, sending restart commands directly to subagents.
 - B) Configure the subagent to always return partial results with a success status, embedding error details in metadata; the coordinator treats all responses as successful.
 - C) Make the coordinator validate all documents before sending them to the subagent, rejecting documents that might cause failures.
-- D) Implement local recovery in the subagent for transient failures and escalate to the coordinator only errors it cannot resolve, including attempted steps and partial results. ****
+- D) Implement local recovery in the subagent for transient failures and escalate to the coordinator only errors it cannot resolve, including attempted steps and partial results. **[CORRECT]**
 
 **Why D:** Handle errors at the lowest level capable of resolving them. Local recovery reduces coordinator workload while still escalating truly unrecoverable issues with full context and partial progress.
 
@@ -2180,7 +2180,7 @@ When Edit fails due to a non-unique text match:
 
 - A) The synthesis agent lacks instructions to detect coverage gaps.
 - B) The document analysis agent filters out non-visual sources due to overly strict relevance criteria.
-- C) The coordinator’s task decomposition is too narrow, assigning subagents work that does not cover all relevant areas. ****
+- C) The coordinator’s task decomposition is too narrow, assigning subagents work that does not cover all relevant areas. **[CORRECT]**
 - D) The web-search agent’s queries are insufficient and should be broadened to cover more sectors.
 
 **Why C:** The coordinator decomposed a broad topic only into visual-art subtasks, missing music, literature, and film entirely. Since subagents executed their assignments correctly, the narrow decomposition is the obvious root cause.
@@ -2196,7 +2196,7 @@ When Edit fails due to a non-unique text match:
 - A) Continue synthesis using only successful sources and produce an output without mentioning which data was unavailable.
 - B) The synthesis subagent returns an error to the coordinator, triggering a full retry or task failure due to incomplete data.
 - C) The synthesis subagent asks the coordinator to retry timed-out sources with a longer timeout before starting synthesis.
-- D) Structure the synthesis output with coverage annotations that indicate which conclusions are well-supported and where gaps exist due to unavailable sources. ****
+- D) Structure the synthesis output with coverage annotations that indicate which conclusions are well-supported and where gaps exist due to unavailable sources. **[CORRECT]**
 
 **Why D:** Coverage annotations implement graceful degradation with transparency, preserving value from completed work while propagating uncertainty to enable informed decisions about confidence.
 
@@ -2208,7 +2208,7 @@ When Edit fails due to a non-unique text match:
 
 **Which approach is most effective?**
 
-- A) Return an error with context to the coordinator agent, allowing it to decide how to proceed. ****
+- A) Return an error with context to the coordinator agent, allowing it to decide how to proceed. **[CORRECT]**
 - B) Silently skip the corrupted document and continue processing the remaining files to avoid interrupting the workflow.
 - C) Automatically retry parsing the document three times with exponential backoff before reporting a failure.
 - D) Throw an exception that terminates the entire research workflow.
@@ -2224,7 +2224,7 @@ When Edit fails due to a non-unique text match:
 **How should you fix the misrouting problem?**
 
 - A) Add a pre-routing classifier that detects whether the user refers to uploaded files or web content before the coordinator decides on delegation.
-- B) Rename the web-search tool to `extract_web_results` and update its description to “processes and returns information retrieved from web search and URLs.” ****
+- B) Rename the web-search tool to `extract_web_results` and update its description to “processes and returns information retrieved from web search and URLs.” **[CORRECT]**
 - C) Add few-shot examples to the coordinator prompt showing correct routing: “User uploads a quarterly report → document analysis agent” and “User asks about a web page → web-search agent.”
 - D) Expand the document analysis tool description with usage examples like “Use for uploaded PDFs, Word docs, and spreadsheets,” leaving the web-search tool unchanged.
 
@@ -2238,7 +2238,7 @@ When Edit fails due to a non-unique text match:
 
 **What is the main advantage of keeping the coordinator as the central hub?**
 
-- A) The coordinator can observe all interactions, handle errors uniformly, and decide what information each subagent should receive. ****
+- A) The coordinator can observe all interactions, handle errors uniformly, and decide what information each subagent should receive. **[CORRECT]**
 - B) The coordinator batches multiple requests to subagents, reducing total API calls and overall latency.
 - C) Routing through the coordinator enables automatic retry logic that direct inter-agent calls cannot support.
 - D) Subagents use isolated memory, and direct communication would require complex serialization that only the coordinator can perform.
@@ -2253,7 +2253,7 @@ When Edit fails due to a non-unique text match:
 
 **Which error-propagation approach best enables intelligent recovery?**
 
-- A) Return structured error context to the coordinator including the failure type, the query executed, any partial results, and potential alternative approaches. ****
+- A) Return structured error context to the coordinator including the failure type, the query executed, any partial results, and potential alternative approaches. **[CORRECT]**
 - B) Catch the timeout within the subagent and return an empty result set marked as successful.
 - C) Implement automatic exponential-backoff retries inside the subagent, only returning a generic “search unavailable” status after exhausting retries.
 - D) Propagate the timeout exception directly to the top-level handler, terminating the entire research workflow.
@@ -2268,7 +2268,7 @@ When Edit fails due to a non-unique text match:
 
 **Which fix is most effective?**
 
-- A) Replace `fetch_url` with a `load_document` tool that validates that URLs point to document formats. ****
+- A) Replace `fetch_url` with a `load_document` tool that validates that URLs point to document formats. **[CORRECT]**
 - B) Remove `fetch_url` from the document analysis agent and route all URL fetching through the coordinator to the web-search agent.
 - C) Implement filtering that blocks `fetch_url` calls to known search engine domains while allowing other URLs.
 - D) Add instructions to the document analysis agent prompt that `fetch_url` should only be used to download document URLs, not to search.
@@ -2284,7 +2284,7 @@ When Edit fails due to a non-unique text match:
 **What is the most effective way to address this?**
 
 - A) Allow both agents to finish in parallel, then have the coordinator deduplicate overlapping results before passing them to the synthesis agent.
-- B) The coordinator explicitly partitions the research space before delegating, assigning each agent distinct subtopics or source types. ****
+- B) The coordinator explicitly partitions the research space before delegating, assigning each agent distinct subtopics or source types. **[CORRECT]**
 - C) Implement a shared-state mechanism where agents log their current focus area so other agents can dynamically avoid duplication during execution.
 - D) Switch to sequential execution where document analysis runs only after web search completes, using web-search results as context to avoid duplication.
 
@@ -2301,7 +2301,7 @@ When Edit fails due to a non-unique text match:
 - A) Aggregate the results into a single success-percentage metric (e.g., “67% source coverage”) with detailed logs available on demand.
 - B) Report both “timeout” and “0 results” as failures requiring coordinator intervention.
 - C) Retry transient failures internally and report only persistent errors.
-- D) Distinguish access failures (timeout) that require a retry decision from valid empty results (“0 results”) that represent successful queries. ****
+- D) Distinguish access failures (timeout) that require a retry decision from valid empty results (“0 results”) that represent successful queries. **[CORRECT]**
 
 **Why D:** A timeout (access failure) and “0 results” (valid empty result) are semantically different outcomes requiring different responses. Distinguishing them allows the coordinator to retry the patent database while accepting the industry reports “0 results” as a valid, informative finding.
 
@@ -2315,7 +2315,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Summarize all subagent outputs to under 20K tokens before aggregation to keep content within the model’s reliable processing range.
 - B) Stream subagent results to the synthesis agent incrementally, processing web-search results first to completion, then adding document analysis results.
-- C) Place a key-findings summary at the start of the aggregated input and organize detailed results with explicit section headings for easier navigation. ****
+- C) Place a key-findings summary at the start of the aggregated input and organize detailed results with explicit section headings for easier navigation. **[CORRECT]**
 - D) Implement rotation that alternates which subagent’s results appear first across research tasks to ensure both sources get equal top positioning over time.
 
 **Why C:** Putting a key-findings summary at the start leverages primacy effects so critical information sits in the most reliably processed position. Adding explicit section headings throughout helps the model navigate and attend to mid-input content, directly mitigating the “lost in the middle” phenomenon.
@@ -2328,7 +2328,7 @@ When Edit fails due to a non-unique text match:
 
 **Which solution is most effective?**
 
-- A) Modify upstream agents to return structured data (key facts, quotes, relevance scores) instead of verbose content and reasoning. ****
+- A) Modify upstream agents to return structured data (key facts, quotes, relevance scores) instead of verbose content and reasoning. **[CORRECT]**
 - B) Add an intermediate summarization agent that condenses findings before passing them to synthesis.
 - C) Have the synthesis agent process findings in sequential batches, maintaining state between calls.
 - D) Store findings in a vector database and give the synthesis agent search tools to query during its work.
@@ -2346,7 +2346,7 @@ When Edit fails due to a non-unique text match:
 - A) Give the synthesis agent access to all web-search tools so it can handle any verification need directly without coordinator loops.
 - B) Have the synthesis agent accumulate all verification needs and return them as a batch to the coordinator at the end, which then sends them all to the web-search agent at once.
 - C) Have the web-search agent proactively cache extra context around each source during initial research in anticipation of synthesis needing verification.
-- D) Give the synthesis agent a limited-scope `verify_fact` tool for simple checks, while routing complex verifications through the coordinator to the web-search agent. ****
+- D) Give the synthesis agent a limited-scope `verify_fact` tool for simple checks, while routing complex verifications through the coordinator to the web-search agent. **[CORRECT]**
 
 **Why D:** A limited-scope fact-verification tool lets the synthesis agent handle 85% of simple checks directly, eliminating most loops, while preserving the coordinator delegation path for the 15% of complex verifications. This applies least privilege while significantly reducing latency.
 
@@ -2363,7 +2363,7 @@ When Edit fails due to a non-unique text match:
 **Which approach is most effective?**
 
 - A) Add an “Output Format for Review” section to CLAUDE.md with examples of structured findings so Claude learns the expected format from project context.
-- B) Use the CLI flags `--output-format json` and `--json-schema` to enforce structured findings, then parse the output to post inline comments via the GitHub API. ****
+- B) Use the CLI flags `--output-format json` and `--json-schema` to enforce structured findings, then parse the output to post inline comments via the GitHub API. **[CORRECT]**
 - C) Include explicit formatting instructions in the review prompt requiring each finding to follow a parseable template like `[FILE:path] [LINE:n] [SEVERITY:level] ...`.
 - D) Keep narrative review format but add a summarization step that uses Claude to generate a structured JSON summary of findings.
 
@@ -2377,7 +2377,7 @@ When Edit fails due to a non-unique text match:
 
 **Which approach directly addresses the root cause?**
 
-- A) Run a second independent instance of Claude Code to review the changes without access to the generator’s reasoning. ****
+- A) Run a second independent instance of Claude Code to review the changes without access to the generator’s reasoning. **[CORRECT]**
 - B) Enable extended thinking mode for the generation stage to allow more thorough deliberation before producing suggestions.
 - C) Add explicit self-review instructions to the generation prompt asking Claude to critique its own suggestions before finalizing output.
 - D) Include full test files and documentation in prompt context so Claude better understands expected behavior during generation.
@@ -2393,7 +2393,7 @@ When Edit fails due to a non-unique text match:
 **What is the primary technical limitation?**
 
 - A) Batch processing does not include correlation IDs to map outputs back to input requests.
-- B) The asynchronous model cannot execute tools mid-request and return results for Claude to continue analysis. ****
+- B) The asynchronous model cannot execute tools mid-request and return results for Claude to continue analysis. **[CORRECT]**
 - C) The Batch API does not support tool definitions in request parameters.
 - D) The batch processing latency of up to 24 hours is too slow for pull request feedback, although the workflow would otherwise function.
 
@@ -2408,7 +2408,7 @@ When Edit fails due to a non-unique text match:
 **Which combination is correct?**
 
 - A) Use the Message Batches API for all three tasks to maximize 50% savings, configuring the pipeline to poll for batch completion.
-- B) Use synchronous calls for PR style checks; use the Message Batches API for weekly security audits and nightly test generation. ****
+- B) Use synchronous calls for PR style checks; use the Message Batches API for weekly security audits and nightly test generation. **[CORRECT]**
 - C) Use synchronous calls for all three tasks for consistent response times, relying on prompt caching to reduce costs across workloads.
 - D) Use synchronous calls for PR style checks and nightly test generation; use the Message Batches API only for weekly security audits.
 
@@ -2425,7 +2425,7 @@ When Edit fails due to a non-unique text match:
 - A) Further refine instructions with more explicit requirements for each part of the feedback format (location, issue, severity, proposed fix).
 - B) Expand the context window to include more surrounding codebase so the model has enough information to propose concrete fixes.
 - C) Implement a two-pass approach where one prompt identifies issues and a second generates fixes, allowing specialization.
-- D) Add 3–4 few-shot examples showing the exact required format: identified issue, location in code, concrete fix suggestion. ****
+- D) Add 3–4 few-shot examples showing the exact required format: identified issue, location in code, concrete fix suggestion. **[CORRECT]**
 
 **Why D:** Few-shot examples are the most effective technique for achieving consistent output format when instructions alone produce variable results. Providing 3–4 examples that show the exact desired structure (issue, location, concrete fix) gives the model a concrete pattern to follow, which is more reliable than abstract instructions.
 
@@ -2438,7 +2438,7 @@ When Edit fails due to a non-unique text match:
 **Which mode should use batch processing?**
 
 - A) Only the pre-merge-commit hook.
-- B) Only the deep analysis. ****
+- B) Only the deep analysis. **[CORRECT]**
 - C) Both modes.
 - D) Neither mode.
 
@@ -2455,7 +2455,7 @@ When Edit fails due to a non-unique text match:
 - A) Include `git blame` data so Claude can identify comments that predate recent code changes.
 - B) Add few-shot examples of misleading comments to help the model recognize similar patterns in the codebase.
 - C) Filter TODO, FIXME, and descriptive comment patterns before analysis to reduce noise.
-- D) Specify explicit criteria: flag comments only when the behavior they claim contradicts the code’s actual behavior. ****
+- D) Specify explicit criteria: flag comments only when the behavior they claim contradicts the code’s actual behavior. **[CORRECT]**
 
 **Why D:** Explicit criteria—flagging comments only when claimed behavior contradicts actual code behavior—directly addresses the root cause by replacing a vague instruction with a precise definition of what constitutes a problem. This reduces false positives on acceptable patterns and misses of truly misleading comments.
 
@@ -2467,7 +2467,7 @@ When Edit fails due to a non-unique text match:
 
 **Which approach best restores developer trust?**
 
-- A) Temporarily disable high-false-positive categories (style, naming, documentation) and keep only high-precision categories while improving prompts. ****
+- A) Temporarily disable high-false-positive categories (style, naming, documentation) and keep only high-precision categories while improving prompts. **[CORRECT]**
 - B) Keep all categories enabled but display confidence scores with each finding so developers can decide what to investigate.
 - C) Keep all categories enabled and add few-shot examples to improve accuracy for each category over the next few weeks.
 - D) Apply a uniform strictness reduction across all categories to bring the overall false-positive rate down.
@@ -2482,7 +2482,7 @@ When Edit fails due to a non-unique text match:
 
 **What change is most effective?**
 
-- A) Include the existing test file in context so Claude can determine what scenarios are already covered. ****
+- A) Include the existing test file in context so Claude can determine what scenarios are already covered. **[CORRECT]**
 - B) Reduce the requested number of suggestions from 10 to 5, assuming Claude prioritizes the most valuable cases first.
 - C) Add instructions directing Claude to focus exclusively on edge cases and error conditions rather than success paths.
 - D) Implement post-processing that filters suggestions whose descriptions match existing test names via keyword overlap.
@@ -2500,7 +2500,7 @@ When Edit fails due to a non-unique text match:
 - A) Run review only when the PR is created and in the final pre-merge state, skipping intermediate commits.
 - B) Add a post-processing filter that removes findings that match previous ones by file paths and issue descriptions before posting comments.
 - C) Restrict review scope to files changed in the most recent push, excluding files from earlier commits.
-- D) Include previous review findings in context and instruct Claude to report only new or still-unresolved issues. ****
+- D) Include previous review findings in context and instruct Claude to report only new or still-unresolved issues. **[CORRECT]**
 
 **Why D:** Including prior review findings in context lets Claude distinguish new problems from those already addressed in recent commits. This preserves review thoroughness while using Claude’s reasoning to avoid redundant feedback on fixed code.
 
@@ -2513,7 +2513,7 @@ When Edit fails due to a non-unique text match:
 **What is the correct approach?**
 
 - A) Add a `--batch` flag: `claude --batch "Analyze this pull request for security issues"`.
-- B) Add the `-p` flag: `claude -p "Analyze this pull request for security issues"`. ****
+- B) Add the `-p` flag: `claude -p "Analyze this pull request for security issues"`. **[CORRECT]**
 - C) Redirect stdin from `/dev/null`: `claude "Analyze this pull request for security issues" < /dev/null`.
 - D) Set the environment variable `CLAUDE_HEADLESS=true` before running the command.
 
@@ -2528,7 +2528,7 @@ When Edit fails due to a non-unique text match:
 **How should you restructure the review?**
 
 - A) Run three independent full-PR review passes and flag only issues that appear in at least two of the three runs.
-- B) Split into focused passes: review each file individually for local issues, then run a separate integration-oriented pass to examine cross-file data flows. ****
+- B) Split into focused passes: review each file individually for local issues, then run a separate integration-oriented pass to examine cross-file data flows. **[CORRECT]**
 - C) Require developers to split large PRs into smaller submissions of 3–4 files before running automated review.
 - D) Switch to a larger model with a bigger context window so it can pay sufficient attention to all 14 files in one pass.
 
@@ -2542,7 +2542,7 @@ When Edit fails due to a non-unique text match:
 
 **What change best addresses investigation time?**
 
-- A) Require Claude to include its rationale and confidence estimate directly in each finding. ****
+- A) Require Claude to include its rationale and confidence estimate directly in each finding. **[CORRECT]**
 - B) Add a post-processor that analyzes finding patterns and automatically suppresses those that match historical false-positive signatures.
 - C) Categorize findings as “blocking issues” vs “suggestions,” with different review requirements by level.
 - D) Configure Claude to show only high-confidence findings, filtering uncertain flags before developers see them.
@@ -2557,7 +2557,7 @@ When Edit fails due to a non-unique text match:
 
 **Which approach best restores developer trust?**
 
-- A) Temporarily disable high-false-positive categories (style, naming, documentation) and keep only high-precision categories while improving prompts. ****
+- A) Temporarily disable high-false-positive categories (style, naming, documentation) and keep only high-precision categories while improving prompts. **[CORRECT]**
 - B) Keep all categories enabled but display confidence scores with each finding so developers can decide what to investigate.
 - C) Keep all categories enabled and add few-shot examples to improve accuracy for each category over the next few weeks.
 - D) Apply a uniform strictness reduction across all categories to bring the overall false-positive rate down.
@@ -2574,7 +2574,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Move both to batch processing with fallback to synchronous calls if batches take too long.
 - B) Move both workflows to batch processing with status polling to verify completion.
-- C) Use batch processing only for technical debt reports; keep synchronous calls for pre-merge checks. ****
+- C) Use batch processing only for technical debt reports; keep synchronous calls for pre-merge checks. **[CORRECT]**
 - D) Keep synchronous calls for both workflows to avoid issues with batch result ordering.
 
 **Why C:** Message Batches API processing can take up to 24 hours with no latency SLA, which is acceptable for overnight technical debt reports but unacceptable for blocking pre-merge checks where developers wait. This matches each workflow to the right API based on latency requirements.
@@ -2592,7 +2592,7 @@ When Edit fails due to a non-unique text match:
 **Which approach is most effective for the next iteration?**
 
 - A) Write a JSON schema describing the expected output structure and validate Claude’s output against it after each iteration.
-- B) Provide 2–3 concrete input-output examples showing the expected transformation for representative API responses. ****
+- B) Provide 2–3 concrete input-output examples showing the expected transformation for representative API responses. **[CORRECT]**
 - C) Rewrite requirements with more technical precision, specifying exact field mappings, nesting rules, and timestamp format strings.
 - D) Ask Claude to explain its current understanding of the requirements to identify where interpretations diverge.
 
@@ -2607,7 +2607,7 @@ When Edit fails due to a non-unique text match:
 **How should you approach this task?**
 
 - A) Start in direct execution mode using incoming webhooks to match the existing one-way notification pattern.
-- B) Switch to planning mode to explore integration options and architectural implications, then present a recommendation before implementation. ****
+- B) Switch to planning mode to explore integration options and architectural implications, then present a recommendation before implementation. **[CORRECT]**
 - C) Start in direct execution mode by scaffolding a Slack channel class using existing patterns, deferring the integration method decision.
 - D) Start in direct execution mode using a bot-token approach to ensure delivery confirmation is possible.
 
@@ -2624,7 +2624,7 @@ When Edit fails due to a non-unique text match:
 - A) Move all guidance into separate Skills files organized by workflow type, leaving only a brief project description in CLAUDE.md.
 - B) Keep everything in CLAUDE.md but use `@import` syntax to organize into separately maintained files by category.
 - C) Split CLAUDE.md into files under `.claude/rules/` with path-bound glob patterns so each rule loads only for the relevant file types.
-- D) Keep universal standards in CLAUDE.md and create Skills for workflow-specific guidance (PR review, deploy, migrations) with trigger keywords. ****
+- D) Keep universal standards in CLAUDE.md and create Skills for workflow-specific guidance (PR review, deploy, migrations) with trigger keywords. **[CORRECT]**
 
 **Why D:** CLAUDE.md content loads in every session, ensuring coding standards and testing conventions always apply, while Skills are invoked on demand when Claude detects trigger keywords—ideal for workflow-specific guidance like PR review, deployment, and migrations.
 
@@ -2636,7 +2636,7 @@ When Edit fails due to a non-unique text match:
 
 **Which approach should you choose?**
 
-- A) Switch to planning mode to explore the codebase, understand dependencies, and design the implementation approach before making changes. ****
+- A) Switch to planning mode to explore the codebase, understand dependencies, and design the implementation approach before making changes. **[CORRECT]**
 - B) Start in direct execution mode and switch to planning only after encountering unexpected complexity during implementation.
 - C) Start in direct execution mode and make incremental changes, letting implementation reveal natural service boundaries.
 - D) Use direct execution with detailed upfront instructions that specify each service structure.
@@ -2651,7 +2651,7 @@ When Edit fails due to a non-unique text match:
 
 **How do you most effectively fix this while keeping full analysis capabilities?**
 
-- A) Add `context: fork` in the skill frontmatter to run the analysis in an isolated subagent context. ****
+- A) Add `context: fork` in the skill frontmatter to run the analysis in an isolated subagent context. **[CORRECT]**
 - B) Add `model: haiku` in frontmatter to use a faster, cheaper model for analysis.
 - C) Split the skill into three smaller skills, each producing less output.
 - D) Add instructions to the skill to compress all results into a short summary before displaying them.
@@ -2668,7 +2668,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Create a personal version under `~/.claude/skills/` with a different name, e.g., `/my-commit`.
 - B) Add conditional logic based on username in the project skill frontmatter.
-- C) Create a personal version at `~/.claude/skills/commit/SKILL.md` with the same name. ****
+- C) Create a personal version at `~/.claude/skills/commit/SKILL.md` with the same name. **[CORRECT]**
 - D) Set `override: true` in the personal skill frontmatter to prioritize it over the project version.
 
 **Why C:** Personal skills take precedence over project skills with the same name. A personal skill at `~/.claude/skills/commit/SKILL.md` will override the team’s project skill, allowing the developer to customize their workflow while maintaining the familiar `/commit` command name for their personal use. This approach is better than option A because it preserves the original command name, improving the developer’s workflow without affecting teammates.
@@ -2681,7 +2681,7 @@ When Edit fails due to a non-unique text match:
 
 **What is the most likely cause and fix?**
 
-- A) The guidance lives in the original developers’ user-level `~/.claude/CLAUDE.md` files, not in the project `.claude/CLAUDE.md`. Move the instruction to the project-level file so all team members receive it. ****
+- A) The guidance lives in the original developers’ user-level `~/.claude/CLAUDE.md` files, not in the project `.claude/CLAUDE.md`. Move the instruction to the project-level file so all team members receive it. **[CORRECT]**
 - B) The new developer’s `~/.claude/CLAUDE.md` contains conflicting instructions overriding project settings; they should delete the conflicting section.
 - C) Claude Code learns per-user preferences over time; the new developer must repeat the requirement until Claude “remembers” it.
 - D) Claude Code caches CLAUDE.md after first read; original developers use cached versions. Everyone should clear the Claude Code cache.
@@ -2699,7 +2699,7 @@ When Edit fails due to a non-unique text match:
 - A) Add endpoint examples and pattern documentation to the project CLAUDE.md so they are always available.
 - B) Manually reference endpoint examples in every generation request by copying code into the prompt.
 - C) Configure path-specific rules in `.claude/rules/api/` that include endpoint examples and activate when working in the API directory.
-- D) Create a skill that references the endpoint examples and contains pattern-following instructions, invoked on demand via a slash command. ****
+- D) Create a skill that references the endpoint examples and contains pattern-following instructions, invoked on demand via a slash command. **[CORRECT]**
 
 **Why D:** A skill invoked on demand loads the example context only when generating new endpoints, not during unrelated tasks like debugging or review. This keeps the main context clean while preserving high-quality generation when needed.
 
@@ -2712,7 +2712,7 @@ When Edit fails due to a non-unique text match:
 **Which configuration approach fixes all three problems?**
 
 - A) Use positional parameters `$1` and `$2` instead of `$ARGUMENTS` to enforce specific inputs, include explicit schema file references via `@` syntax for context control, and add a frontmatter description warning about destructive operations.
-- B) Add `argument-hint` in frontmatter to request required parameters, use `context: fork` to isolate execution, and restrict `allowed-tools` to file-write operations. ****
+- B) Add `argument-hint` in frontmatter to request required parameters, use `context: fork` to isolate execution, and restrict `allowed-tools` to file-write operations. **[CORRECT]**
 - C) Split into `/migration-create` and `/migration-apply` skills, add validation instructions to request migration name if missing, and use different `allowed-tools` scopes for each.
 - D) Add validation instructions in the skill SKILL.md to ensure `$ARGUMENTS` is a valid name, add prompts to ignore prior conversation context, and list prohibited operations to avoid.
 
@@ -2729,7 +2729,7 @@ When Edit fails due to a non-unique text match:
 - A) Put all conventions in the root CLAUDE.md under headings for each area and rely on Claude to infer which section applies.
 - B) Create skills in `.claude/skills/` for each code type, embedding conventions in each SKILL.md.
 - C) Place a separate CLAUDE.md file in each subdirectory containing conventions for that area.
-- D) Create rule files under `.claude/rules/` with YAML frontmatter specifying glob patterns to conditionally apply conventions based on file paths. ****
+- D) Create rule files under `.claude/rules/` with YAML frontmatter specifying glob patterns to conditionally apply conventions based on file paths. **[CORRECT]**
 
 **Why D:** `.claude/rules/` files with YAML frontmatter and glob patterns (e.g., `**/*.test.tsx`, `src/api/**/*.ts`) enable deterministic, path-based convention application regardless of directory structure. This is the most supported approach for cross-cutting patterns like distributed test files.
 
@@ -2742,7 +2742,7 @@ When Edit fails due to a non-unique text match:
 **Where should you create the command file?**
 
 - A) In `~/.claude/commands/` in each developer’s home directory.
-- B) In the project repository under `.claude/commands/`. ****
+- B) In the project repository under `.claude/commands/`. **[CORRECT]**
 - C) In `.claude/config.json` as an array of commands.
 - D) In the root project CLAUDE.md.
 
@@ -2757,7 +2757,7 @@ When Edit fails due to a non-unique text match:
 **What approach does Claude Code support to organize project-level instructions into focused topical modules?**
 
 - A) Define a `.claude/config.yaml` mapping file patterns to specific sections inside CLAUDE.md.
-- B) Create separate Markdown files in `.claude/rules/`, each covering one topic (e.g., `testing.md`, `api-conventions.md`). ****
+- B) Create separate Markdown files in `.claude/rules/`, each covering one topic (e.g., `testing.md`, `api-conventions.md`). **[CORRECT]**
 - C) Split instructions into README.md files in relevant subdirectories that Claude automatically loads as instructions.
 - D) Create multiple files named CLAUDE.md at different levels of the directory tree, each overriding parent instructions.
 
@@ -2772,7 +2772,7 @@ When Edit fails due to a non-unique text match:
 **How should you most effectively configure this skill?**
 
 - A) Use the `!` prefix in the skill to run exploration logic as a bash subprocess.
-- B) Add `context: fork` in the skill frontmatter. ****
+- B) Add `context: fork` in the skill frontmatter. **[CORRECT]**
 - C) Split into two skills—`/explore-start` and `/explore-end`—to mark boundaries when exploration context should be discarded.
 - D) Create the skill in `~/.claude/skills/` instead of `.claude/skills/`.
 
@@ -2788,7 +2788,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Have each developer add the server in user scope via `claude mcp add --scope user`.
 - B) Create an MCP server wrapper that reads tokens from a `.env` file and proxies GitHub API calls, then add the wrapper to the project `.mcp.json`.
-- C) Add the server to the project `.mcp.json` using environment variable substitution (`${GITHUB_TOKEN}`) for auth and document the required environment variable in the project README. ****
+- C) Add the server to the project `.mcp.json` using environment variable substitution (`${GITHUB_TOKEN}`) for auth and document the required environment variable in the project README. **[CORRECT]**
 - D) Configure the server in project scope with a placeholder token, then tell developers to override it in their local config.
 
 **Why C:** A project `.mcp.json` with environment variable substitution is idiomatic: it provides a single version-controlled source of truth for MCP configuration while letting each developer supply credentials via environment variables. Documenting the variable makes onboarding easy without committing secrets.
@@ -2801,7 +2801,7 @@ When Edit fails due to a non-unique text match:
 
 **Which approach is most effective to complete the task while maintaining implementation consistency?**
 
-- A) Use an Explore subagent for Phase 1 to isolate verbose discovery output and return a summary, then continue Phases 2–3 in the main conversation. ****
+- A) Use an Explore subagent for Phase 1 to isolate verbose discovery output and return a summary, then continue Phases 2–3 in the main conversation. **[CORRECT]**
 - B) Do all phases in the main conversation, periodically using `/compact` to reduce context usage while moving through files.
 - C) Switch to headless mode with `--continue`, passing explicit context summaries between batch calls to maintain continuity.
 - D) Define the error-handling pattern in CLAUDE.md, then process files in batches across multiple sessions relying on the shared memory file for consistency.
@@ -2823,7 +2823,7 @@ When Edit fails due to a non-unique text match:
 - A) Implement a preprocessing classifier to detect order-related requests and route them directly to `lookup_order`.
 - B) Reduce the number of tools available to the agent to simplify choice.
 - C) Add few-shot examples to the system prompt covering all possible order request patterns to improve tool selection.
-- D) Check the tool descriptions to ensure they clearly differentiate each tool’s purpose. ****
+- D) Check the tool descriptions to ensure they clearly differentiate each tool’s purpose. **[CORRECT]**
 
 **Why D:** Tool descriptions are the primary input the model uses to decide which tool to call. When an agent consistently picks the wrong tool, the first diagnostic step is to verify that tool descriptions clearly separate each tool’s purpose and usage boundaries.
 
@@ -2837,7 +2837,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Implement a preprocessing layer that uses a separate model call to decompose multi-issue messages into separate requests, handle each independently, and merge results.
 - B) Combine related tools into fewer universal tools.
-- C) Add few-shot examples to the prompt demonstrating correct reasoning and tool sequencing for multi-issue requests. ****
+- C) Add few-shot examples to the prompt demonstrating correct reasoning and tool sequencing for multi-issue requests. **[CORRECT]**
 - D) Implement response validation that detects incomplete answers and automatically reprompts the agent to resolve missed issues.
 
 **Why C:** Few-shot examples that demonstrate correct reasoning and tool sequencing for multi-issue requests are most effective because the agent already performs well on single issues—what it needs is guidance on the pattern for decomposing and routing multiple issues and keeping parameters separated.
@@ -2852,7 +2852,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Add explicit verification checkpoints between stages, requiring the agent to record progress after resolving each issue before moving to the next.
 - B) Reduce the number of tools by combining `get_customer`, `lookup_order`, and billing-related tools into a single `investigate_issue` tool.
-- C) Decompose the request into separate issues, then investigate each in parallel using shared customer context before synthesizing a final resolution. ****
+- C) Decompose the request into separate issues, then investigate each in parallel using shared customer context before synthesizing a final resolution. **[CORRECT]**
 - D) Add few-shot examples to the system prompt demonstrating ideal tool-call sequences for various multi-faceted billing scenarios.
 
 **Why C:** Decomposing into separate issues and investigating in parallel with shared customer context fixes both key problems: it eliminates redundant data retrieval by reusing shared context across issues and reduces total tool-call loops by parallelizing investigation before synthesizing a single resolution.
@@ -2868,7 +2868,7 @@ When Edit fails due to a non-unique text match:
 - A) Require the agent to self-rate confidence on a 1–10 scale before each response and automatically route to humans when confidence drops below a threshold.
 
 - B) Deploy a separate classifier model trained on historical tickets to predict which requests need escalation before the main agent starts processing.
-- C) Add explicit escalation criteria to the system prompt with few-shot examples showing when to escalate versus resolve autonomously. ****
+- C) Add explicit escalation criteria to the system prompt with few-shot examples showing when to escalate versus resolve autonomously. **[CORRECT]**
 - D) Implement sentiment analysis to determine customer frustration level and automatically escalate past a negative sentiment threshold.
 
 **Why C:** Explicit escalation criteria with few-shot examples directly address the root cause—unclear decision boundaries between simple and complex cases. It’s the most proportional, effective first intervention that teaches the agent when to escalate and when to resolve autonomously without extra infrastructure.
@@ -2883,7 +2883,7 @@ When Edit fails due to a non-unique text match:
 
 - A) A customer wants to cancel an order shipped yesterday and arriving tomorrow. The agent should escalate because the customer might change their mind after receiving the package.
 - B) A customer claims they didn’t receive an order, but tracking shows it was delivered and signed for at their address three days ago. The agent should escalate because presenting contradictory evidence could harm the customer relationship.
-- C) A customer requests competitor price matching. Your policies allow price adjustments for price drops on your own site within 14 days, but say nothing about competitor prices. The agent should escalate for policy interpretation. ****
+- C) A customer requests competitor price matching. Your policies allow price adjustments for price drops on your own site within 14 days, but say nothing about competitor prices. The agent should escalate for policy interpretation. **[CORRECT]**
 - D) A customer message contains both a billing question and a product return. The agent should escalate so a human can coordinate both issues in one interaction.
 
 **Why C:** This is a genuine policy gap: company rules cover price drops on your own site but do not address competitor price matching. The agent must not invent policy and should escalate for human judgment on how to interpret or extend existing rules.
@@ -2898,7 +2898,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Add few-shot examples showing that the agent always calls `get_customer` first, even when customers voluntarily provide order details.
 - B) Implement a routing classifier that analyzes each request and enables only a subset of tools appropriate for that request type.
-- C) Add a programmatic precondition that blocks `lookup_order` and `process_refund` until `get_customer` returns a verified customer identifier. ****
+- C) Add a programmatic precondition that blocks `lookup_order` and `process_refund` until `get_customer` returns a verified customer identifier. **[CORRECT]**
 - D) Strengthen the system prompt stating that customer verification via `get_customer` is mandatory before any order operations.
 
 **Why C:** A programmatic precondition provides a deterministic guarantee that required sequencing is followed. It’s the most effective approach because it eliminates the possibility of skipping verification, regardless of LLM behavior.
@@ -2911,7 +2911,7 @@ When Edit fails due to a non-unique text match:
 
 **What approach is most effective?**
 
-- A) Add a self-critique stage where the agent evaluates a draft response for completeness—ensuring it resolves the customer’s issue, includes relevant context, and anticipates follow-up questions. ****
+- A) Add a self-critique stage where the agent evaluates a draft response for completeness—ensuring it resolves the customer’s issue, includes relevant context, and anticipates follow-up questions. **[CORRECT]**
 - B) Add a confirmation stage where the agent asks “Does this fully resolve your issue?” before closing, allowing customers to request additional information if needed.
 - C) Upgrade the model from Haiku to Sonnet for complex cases, routing based on a defined complexity metric.
 - D) Implement few-shot examples in the system prompt showing complete explanations for five common complex case types, demonstrating how to include policy context, timelines, and next steps.
@@ -2929,7 +2929,7 @@ When Edit fails due to a non-unique text match:
 - A) Implement speculative execution that automatically calls likely-needed tools in parallel with any requested tool and returns all results regardless of what was requested.
 - B) Increase `max_tokens` to give Claude more room to plan and naturally combine tool requests.
 - C) Create composite tools like `get_customer_with_orders` that bundle common lookup combinations into single calls.
-- D) Instruct Claude in the prompt to bundle tool requests into one turn and return all results together before the next API call. ****
+- D) Instruct Claude in the prompt to bundle tool requests into one turn and return all results together before the next API call. **[CORRECT]**
 
 **Why D:** Prompting Claude to bundle related tool requests into a single turn leverages its native ability to request multiple tools at once. It directly fixes the sequential-call pattern with minimal architectural change.
 
@@ -2943,7 +2943,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Increase the summarization threshold from 70% to 85% so conversations have more room before summarization triggers.
 - B) Store full conversation history in external storage and implement retrieval when the agent detects references like “as I mentioned.”
-- C) Extract transactional facts (amounts, dates, order numbers) into a persistent “case facts” block included in every prompt outside the summarized history. ****
+- C) Extract transactional facts (amounts, dates, order numbers) into a persistent “case facts” block included in every prompt outside the summarized history. **[CORRECT]**
 - D) Revise the summarization prompt to explicitly preserve all numbers, percentages, dates, and customer-stated expectations verbatim.
 
 **Why C:** Summarization inherently loses precise details. Extracting transactional facts into a structured “case facts” block outside the summarized history preserves critical information so it’s reliably available in every prompt regardless of how many turns have been summarized.
@@ -2957,7 +2957,7 @@ When Edit fails due to a non-unique text match:
 **How should you address this?**
 
 - A) Implement a confidence scoring system that acts autonomously above 85% confidence and requests clarification below the threshold.
-- B) Instruct Claude to request an additional identifier (email, phone, or order number) when `get_customer` returns multiple matches before taking any customer-specific action. ****
+- B) Instruct Claude to request an additional identifier (email, phone, or order number) when `get_customer` returns multiple matches before taking any customer-specific action. **[CORRECT]**
 - C) Modify `get_customer` to return only a single most-likely match based on a ranking algorithm, eliminating ambiguity.
 - D) Add few-shot examples to the prompt demonstrating correct reasoning and tool sequencing for ambiguous matches.
 
@@ -2971,7 +2971,7 @@ When Edit fails due to a non-unique text match:
 
 **What is the most likely root cause?**
 
-- A) The system prompt contains keyword-sensitive instructions that steer behavior based on terms like “account,” creating unintended tool-selection patterns. ****
+- A) The system prompt contains keyword-sensitive instructions that steer behavior based on terms like “account,” creating unintended tool-selection patterns. **[CORRECT]**
 - B) The model’s base training creates associations between “account” terminology and customer-related operations that override tool descriptions.
 - C) The model needs more training data on multi-concept messages and should be fine-tuned on examples containing both account and order terminology.
 - D) Tool descriptions need additional negative examples specifying when NOT to use each tool to prevent this keyword-induced confusion.
@@ -2989,7 +2989,7 @@ When Edit fails due to a non-unique text match:
 - A) Implement a routing layer that analyzes user input before each turn and preselects the correct tool based on detected keywords and ID patterns.
 - B) Combine both tools into a single `lookup_entity` that accepts any identifier and internally decides which backend to query.
 - C) Add few-shot examples to the system prompt demonstrating correct tool selection patterns, with 5–8 examples routing order-related queries to `lookup_order`.
-- D) Expand each tool’s description to include input formats, example queries, edge cases, and boundaries explaining when to use it versus similar tools. ****
+- D) Expand each tool’s description to include input formats, example queries, edge cases, and boundaries explaining when to use it versus similar tools. **[CORRECT]**
 
 **Why D:** Expanding tool descriptions with input formats, example queries, edge cases, and clear boundaries directly fixes the root cause—minimal descriptions that don’t give the LLM enough information to distinguish similar tools. It’s a low-effort, high-impact first step that improves the primary mechanism the LLM uses for tool selection.
 
@@ -3001,7 +3001,7 @@ When Edit fails due to a non-unique text match:
 
 **What determines this decision?**
 
-- A) Check the `stop_reason` field in Claude’s response—continue if it is `tool_use` and stop if it is `end_turn`. ****
+- A) Check the `stop_reason` field in Claude’s response—continue if it is `tool_use` and stop if it is `end_turn`. **[CORRECT]**
 - B) Parse Claude’s text for phrases like “I’m done” or “Can I help with anything else?”—natural language signals indicate task completion.
 - C) Set a maximum iteration count (e.g., 10 calls) and stop when reached, regardless of whether Claude indicates more work is needed.
 - D) Check whether the response contains assistant text content—if Claude generated explanatory text, the loop should terminate.
@@ -3016,7 +3016,7 @@ When Edit fails due to a non-unique text match:
 
 **Which approach is most maintainable?**
 
-- A) Use a PostToolUse hook to intercept tool outputs and apply formatting transformations before the agent processes them. ****
+- A) Use a PostToolUse hook to intercept tool outputs and apply formatting transformations before the agent processes them. **[CORRECT]**
 - B) Modify tools you control to return human-readable formats and create wrappers for third-party tools.
 - C) Create a `normalize_data` tool that the agent calls after every data retrieval to transform values.
 - D) Add detailed format documentation to the system prompt explaining each tool’s data conventions.
@@ -3033,7 +3033,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Add explicit “use when” and “don’t use when” guidance in each tool description covering ambiguous cases.
 - B) Add examples grouped by tool—all `get_customer` scenarios together, then all `lookup_order` scenarios.
-- C) Add 4–6 examples targeted at ambiguous scenarios, each with rationale for why one tool was chosen over plausible alternatives. ****
+- C) Add 4–6 examples targeted at ambiguous scenarios, each with rationale for why one tool was chosen over plausible alternatives. **[CORRECT]**
 - D) Add 10–15 examples of clear, unambiguous requests demonstrating correct tool choice for typical scenarios for each tool.
 
 **Why C:** Targeting few-shot examples at the specific ambiguous scenarios where errors occur, with explicit rationale for why one tool is preferable to alternatives, teaches the model the comparative decision process needed for edge cases. This is more effective than generic examples or declarative rules.
@@ -3049,7 +3049,7 @@ When Edit fails due to a non-unique text match:
 - A) Add server-side validation that permits `dry_run=false` only when a `dry_run=true` call with identical parameters occurred within the past 60 seconds.
 - B) Annotate the tool as requiring confirmation and configure the orchestration layer to prompt the user for approval before forwarding any calls to annotated tools.
 - C) Add detailed instructions and few-shot examples to the tool description requiring the agent to always call with `dry_run=true` first and wait for user confirmation before calling again.
-- D) Replace with two tools: `preview_remove_member` returns impact details and a single-use confirmation token; `execute_remove_member` requires that token, binding execution to the preview. ****
+- D) Replace with two tools: `preview_remove_member` returns impact details and a single-use confirmation token; `execute_remove_member` requires that token, binding execution to the preview. **[CORRECT]**
 
 **Why D:** The two-tool token-binding approach makes it architecturally impossible to execute without a prior preview—the execute tool literally requires a token that only the preview tool can generate. This is the only approach that enforces the constraint at the code level rather than relying on LLM compliance with instructions (C), timing heuristics (A), or orchestration infrastructure (B).
 
@@ -3063,7 +3063,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Add few-shot examples to your system prompt demonstrating how to distinguish network errors from syntax errors.
 - B) Apply exponential backoff retry logic to all errors uniformly.
-- C) Implement automatic retry with backoff for network timeouts inside the tool; return syntax errors immediately with parameter validation details. ****
+- C) Implement automatic retry with backoff for network timeouts inside the tool; return syntax errors immediately with parameter validation details. **[CORRECT]**
 - D) Return all errors with a `retryable` boolean flag and error type details.
 
 **Why C:** Handling retries at the tool level for transient errors is the correct abstraction boundary—the tool has definitive knowledge of the error type and can implement deterministic retry logic without relying on the agent to interpret a flag (D) or follow prompt-level instructions (A). Uniform backoff (B) wastes time on syntax errors that will never succeed.
@@ -3076,7 +3076,7 @@ When Edit fails due to a non-unique text match:
 
 **Which approach best ensures the recommendation aligns with the user's actual priority?**
 
-- A) Surface the contradiction and ask the user to clarify which matters more. ****
+- A) Surface the contradiction and ask the user to clarify which matters more. **[CORRECT]**
 - B) Provide separate recommendations for both scenarios.
 - C) Proceed with the most recently stated preference.
 - D) Recommend a balanced portfolio without addressing the conflict.
@@ -3094,7 +3094,7 @@ When Edit fails due to a non-unique text match:
 - A) Claude requires a vector database connection to maintain conversation memory.
 - B) The model's context window has been exceeded.
 - C) The Claude API requires a `session_id` parameter.
-- D) Your application isn't including prior messages in the `messages` array. ****
+- D) Your application isn't including prior messages in the `messages` array. **[CORRECT]**
 
 **Why D:** Claude has no server-side memory—every API call is stateless. Without including the full conversation history in the `messages` array of each request, Claude has no knowledge of prior turns. Vector databases (A) and `session_id` (C) are not part of Claude's architecture; context window overflow (B) is impossible for two-message exchanges.
 
@@ -3108,7 +3108,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Summarize the entire conversation history.
 - B) Keep only the most recent 20,000 tokens.
-- C) Extract critical structured data (allergies, quantities, preferences), summarize general discussion, and keep recent exchanges verbatim. ****
+- C) Extract critical structured data (allergies, quantities, preferences), summarize general discussion, and keep recent exchanges verbatim. **[CORRECT]**
 - D) Store the full conversation externally and retrieve relevant parts via semantic search.
 
 **Why C:** The hybrid approach preserves the highest-value information at the lowest cost. Critical facts like allergies and recipe quantities are extracted into a compact structured block (preventing the precision loss that occurs during summarization), general discussion is summarized, and recent exchanges are kept verbatim for conversational coherence. Options A and B risk losing critical dietary information; D is architectural overkill for a single cooking session.
@@ -3121,7 +3121,7 @@ When Edit fails due to a non-unique text match:
 
 **What is the most effective solution?**
 
-- A) Hybrid approach: summarize older messages while keeping recent ones verbatim. ****
+- A) Hybrid approach: summarize older messages while keeping recent ones verbatim. **[CORRECT]**
 - B) Vector similarity search over the full conversation history.
 - C) Increase the window to 50 message pairs.
 - D) Summarize dropped messages every turn and prepend the running summary.
@@ -3136,7 +3136,7 @@ When Edit fails due to a non-unique text match:
 
 **What is the primary cause?**
 
-- A) The entire conversation history is included with each API request. ****
+- A) The entire conversation history is included with each API request. **[CORRECT]**
 - B) The model generates progressively longer responses.
 - C) Database operations slow down as history grows.
 - D) The model builds an internal user profile requiring more processing.
@@ -3153,7 +3153,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Rolling window truncation.
 - B) Progressive summarization capturing key conclusions.
-- C) Semantic embeddings with retrieval of relevant exchanges. ****
+- C) Semantic embeddings with retrieval of relevant exchanges. **[CORRECT]**
 - D) Add structured XML tags marking discussion conclusions.
 
 **Why C:** Semantic search over conversation history is the only approach that scales to three months of discussion while being able to surface specific relevant exchanges on demand. Rolling window (A) would discard most of the history. Progressive summarization (B) compresses discussions into abstractions that lose the specific conclusions users are asking about. XML tags (D) require restructuring all past content and don't solve the retrieval problem at this scale.
@@ -3168,7 +3168,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Move behavioral guidelines into the first user message.
 - B) Start a new conversation after 20 turns.
-- C) Insert user-role messages reinforcing guidelines at conversation breakpoints. ****
+- C) Insert user-role messages reinforcing guidelines at conversation breakpoints. **[CORRECT]**
 - D) Use post-response validation to regenerate non-compliant responses.
 
 **Why C:** Periodic injection of behavioral reminders directly combats instruction drift by re-establishing constraints at regular intervals as conversation history accumulates. Moving guidelines to the first user message (A) reduces their authority. Starting a new conversation (B) destroys context. Post-response validation (D) is corrective rather than preventive and adds significant latency.
@@ -3182,7 +3182,7 @@ When Edit fails due to a non-unique text match:
 **What is the most effective fix?**
 
 - A) Inject reminders every 4–5 turns.
-- B) Replace verbose rules with few-shot examples demonstrating proficiency-level adaptation. ****
+- B) Replace verbose rules with few-shot examples demonstrating proficiency-level adaptation. **[CORRECT]**
 - C) Place critical rules at the end of the system prompt.
 - D) Evaluate responses and regenerate if difficulty level mismatches.
 
@@ -3197,7 +3197,7 @@ When Edit fails due to a non-unique text match:
 **Where should these behavioral guidelines be defined?**
 
 - A) Prepended to each user message.
-- B) In the system prompt. ****
+- B) In the system prompt. **[CORRECT]**
 - C) In the first assistant message.
 - D) In environment variables.
 
@@ -3211,7 +3211,7 @@ When Edit fails due to a non-unique text match:
 
 **What is the most effective approach?**
 
-- A) Append a partial assistant message with a direct response opening. ****
+- A) Append a partial assistant message with a direct response opening. **[CORRECT]**
 - B) Lower the temperature setting.
 - C) Post-process responses to remove greetings.
 - D) Add system prompt instructions to avoid those phrases.
@@ -3229,7 +3229,7 @@ When Edit fails due to a non-unique text match:
 - A) Add shipping status to the system prompt.
 - B) Send an immediate synthetic user message.
 - C) Force the assistant to call a status tool on each turn.
-- D) Append the status update as a prefix to the next user message. ****
+- D) Append the status update as a prefix to the next user message. **[CORRECT]**
 
 **Why D:** Prefixing the status update to the next user message injects real-time context at a natural conversation boundary without disrupting the flow. Modifying the system prompt (A) requires rebuilding the session or is architecturally cumbersome. A synthetic user message (B) can break the natural dialogue flow and confuse attribution. Forcing a tool call each turn (C) is wasteful when events are rare.
 
@@ -3243,7 +3243,7 @@ When Edit fails due to a non-unique text match:
 
 - A) Proceed with hidden defaults.
 - B) Ask all clarifying questions in one compound message.
-- C) State assumptions explicitly and proceed while inviting corrections. ****
+- C) State assumptions explicitly and proceed while inviting corrections. **[CORRECT]**
 - D) Use a structured intake form.
 
 **Why C:** Stating assumptions explicitly and proceeding gives the user an immediate, useful response while preserving their ability to correct wrong assumptions. Hidden defaults (A) leave the user unaware of what was assumed. A compound question list (B) still demands upfront effort from the user. A structured form (D) adds more friction, not less—contradicting the goal of reducing abandonment.
@@ -3258,7 +3258,7 @@ When Edit fails due to a non-unique text match:
 
 - A) System prompts only establish initial behavior.
 - B) Model attention weakens as turns accumulate.
-- C) Accumulated assistant responses dilute system prompt influence. ****
+- C) Accumulated assistant responses dilute system prompt influence. **[CORRECT]**
 - D) The system prompt is only sent once.
 
 **Why C:** As assistant responses accumulate in the conversation history, the proportion of text reflecting the system prompt's behavioral constraints decreases relative to the growing body of assistant-generated content. The model increasingly pattern-matches to its own prior outputs rather than the system prompt, compounding drift even at short token lengths. The system prompt is included in every API call (D is false as a standalone explanation), and model attention degradation (B) doesn't operate at 2,500 tokens.
@@ -3271,7 +3271,7 @@ When Edit fails due to a non-unique text match:
 
 **What is the best solution?**
 
-- A) Make reasonable assumptions, state them explicitly, and offer to adjust. ****
+- A) Make reasonable assumptions, state them explicitly, and offer to adjust. **[CORRECT]**
 - B) Classify ambiguity with a smaller model before responding.
 - C) Use predefined interpretations without stating assumptions.
 - D) Limit the assistant to one clarifying question per turn.
